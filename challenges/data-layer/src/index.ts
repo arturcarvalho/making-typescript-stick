@@ -13,4 +13,35 @@ export type DataEntityMap = {
   song: Song;
 };
 
-export class DataStore {}
+export class DataStore {
+  songs: Song[];
+  movies: Movie[];
+  
+  constructor() {
+    this.songs = [];
+    this.movies = [];
+  }
+
+  getAllSongs(): Song[] {
+    return this.songs;
+  }
+  getAllMovies(): Movie[] {
+    return this.movies;
+  }
+
+  addSong(s: Song): Song {
+    this.songs.push(s);
+    return s;
+  }
+  addMovie(m: Movie): Movie {
+    this.movies.push(m);
+    return m;
+  }
+
+  clearSongs() {
+    this.songs = [];
+  }
+  clearMovies() {
+    this.movies = [];
+  }
+}
